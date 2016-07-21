@@ -1,0 +1,121 @@
+@font-face{
+    font-family: 'Devnew';
+    src: url('/staitc/fonts/Devnew.ttf');
+    src: local('/static/fonts/Devnew.tff');
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #29292c;
+    border: 0;
+    font-size: 15px; 
+    letter-spacing: 4px;
+}
+.navbar-default .navbar-nav li a:hover {
+    color: #ffffff;
+    background-color:#29292c;
+}
+.navbar li a, .navbar .navbar-brand { 
+        color: #d5d5d5;
+    }
+.white{
+    color: #ffffff;
+}
+h1.space{
+    padding-top:50px;
+}
+h3.white{
+    color: #ffffff;
+    padding-top:5px;
+    padding-bottom:20px;
+}
+h3{
+    padding-top:5px;
+    padding-bottom:20px;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+    padding-right: 120px;
+    font-size: 30px;
+    font-style: bold;
+}
+.navbar-default .navbar-brand:hover{
+    color: #ffffff;
+}
+.bg-1 {
+    padding-left: 50px;
+    padding-top:10px;
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+
+.bg-2 {
+    padding-left: 50px;
+    padding-top:10px;
+    background-color: #0099cc; /* Green */
+    color: #ffffff;
+}
+
+.container-fluid{
+    padding-left: 12%;
+    padding-top: 20px;
+    padding-right: 12%;
+    padding-bottom: 20px;
+}
+
+.fixed-height{
+    height: 600px;
+    background-color: #ffffff;
+}
+.fixed-height2{
+    height:600px;
+    background-color:#29292c;
+}
+.fixed-height3{
+    height: 100px;
+    background-color:#29292c;
+}
+.well-height{
+    height:300px;
+    background-color:#ffffff;
+}
+p.heading{
+    font-size: 2em;
+}
+img.fixing{
+    height:100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.panel{
+    border: 1px solid #ffffff;
+    border-radius: 0;
+}
+.panel-default .panel-heading{
+    color: #fff;
+    background-color:#29292c;
+}
+
+.glyphicon{
+    font-size:100px;
+    padding-top:100px;
+}
+p.foot{
+    color: #ffffff;
+    padding-top:20px;
+    font-size:1em;
+}
+#demo{
+    font-size: 2em;
+    font-family: Georgia;
+}
+#speed{
+    font-size: 8em;
+}
+#textbox{
+}

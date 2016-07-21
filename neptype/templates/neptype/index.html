@@ -1,0 +1,155 @@
+{% extends 'neptype/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container-fluid fixed-height">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>My First Bootstrap Page</h1>
+            <p>This is some text.</p> 
+        </div>
+        <div class="col-sm-4">
+            <! SignIn Block>
+            <div id="signinbox" class="container-fluid">
+                <p class="heading" align="center"><Strong> Sign In </strong></p>
+                <img src="/static/login_image.png" class="fixing" alt="login">
+                <form class="form-horizontal" role="form" action="/neptype/home/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control input-lg" id="focusedInput" name="username" placeholder="Username" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg" id="focusedInput" name="password" placeholder="Password" type="password"/>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <!input type="submit" value="Login" />
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!SignUp Block>
+            <div class="container-fluid" id="signupbox" style="display:none">
+                <p class="heading" align="center"><strong>Sign Up</strong></p>
+                <form class="form-horizontal" role="form" '''action="/neptype/verify/"''' method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {% render_field form.firstname class="form-control input-lg" id="focusedInput" placeholder="Name" %} 
+                        {{ form.firstname.errors }}
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.email class="form-control input-lg" id="focusedInput" placeholder="Email" %} 
+                        {{ form.email.errors }}
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.username class="form-control input-lg" id="focusedInput" placeholder="Username" %} 
+                        {{ form.username.errors }}
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.password class="form-control input-lg" id="focusedInput" placeholder="Password" %} 
+                        {{ form.password.errors }}
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.password2 class="form-control input-lg" id="focusedInput" placeholder="Confirm Password" %} 
+                        {{ form.password2.errors }}
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" class="btn btn-default">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid fixed-height2">
+    <h1 class="space white" align="center">Top Speeders</h2>
+    <h3 class="white" align="center"> Which category do you belong to?</h4>
+    <div class="row container-fluid">
+        <div class="col-sm-4">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h1>Beginner</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Roshan Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h1>Semi-Pro</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Roshan Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h1>Pro</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Roshan Maharjan</p>
+                    <p><strong>45</strong>Roj Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                    <p><strong>45</strong>Saroj Maharjan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid fixed-height" align="center">
+    <h1 class="space">Features</h1>
+    <h3>What you can do here </h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo"></span>
+            <h3>GLOBAL</h4>
+            <h4>Race in eglish typing and find your speed.</h4>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-home logo"></span>
+            <h3>LOCAL</h4>
+            <h4>Race in nepali typing and find your speed.</h4>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo"></span>
+            <h3>CLASS</h4>
+            <h4>Find out the category you belong to.</h4>
+        </div>
+    </div>
+</div>
+
+<script language="JavaScript">
+function showsignup(){
+    $("#signinbox").slideup();
+    $("#signupbox").slideDown(1000);
+}
+$(document).ready(function(){
+        $("#signin").click(function(){
+            $("#signupbox").hide();
+            $("#signinbox").slideDown(1000);
+            });
+        $("#signup").click(function(){
+            $("#signinbox").hide();
+            $("#signupbox").slideDown(1000);
+            });
+        });
+</script>
+{% endblock %}

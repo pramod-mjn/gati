@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/neptype.css' %}">
+<script src="{% static 'js/neptype.js' %}"></script>
+</head>
+<body>
+   <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="nav-header">
+                <a class="navbar-brand" href="#"><strong>Neptype</strong></a>
+            </div>
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="/neptype/">Home</a></li>
+                <li><a href="/neptype/race/">Race</a><li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="signin"><a href="#">Login</a></li>
+                <li id="signup"><a href="#">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+{% block content %} {% endblock %}
+<nav class="navbar navbar-default navbar-bottom">
+    <div class="container-fluid">
+    <div class="row" align="center">
+        <div class="col-sm-2">
+            <p class="foot">Help</p>
+        </div>
+        <div class="col-sm-2">
+            <p class="foot">Copyright</p>
+        </div>
+        <div class="col-sm-2">
+            <p class="foot">Privacy</p>
+        </div>
+        <div class="col-sm-2">
+            <p class="foot">Terms</p>
+        </div>
+        <div class="col-sm-2">
+            <p class="foot">Feedback</p>
+        </div>
+        <div class="col-sm-2">
+            <p class="foot"><a href="https://www.pramodmjn.com.np">www.pramodmjn.com.np</a></p>
+        </div>
+    </div>
+</div>
+</nav>
+</body>
+</html>
+
