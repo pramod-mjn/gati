@@ -17,6 +17,7 @@ $(document).ready(function(){
     var mistake;
     var sometext; // = "this is pramod maharjan."
     var textarray;// = sometext.split(" ");
+    var str = "";
     var writestatus = false;
     var start_time;
 
@@ -52,17 +53,17 @@ $(document).ready(function(){
         });
 
     });
-    $("#textbox").keydown(function(e){
-        document.write('press' + e.keyCode);
+    $("#textbox").on('input', function(){
         var numwords = textarray.length;
         var x = document.getElementById("textbox");
-        var z = x.value.substr(-1,1);
+        var txt = $(this).val()
+        var z = txt.substr(-1,1);
         var key = z.charCodeAt(0);
         if(writestatus == false){
             x.value ="";
         }
         else if(key == 32){
-            var temp = x.value.slice(0,-1);
+            var temp = txt.slice(0,-1);
             mistake = strcompare(temp, textarray[index]);
             if(!mistake && temp.length == textarray[index].length){
                 x.value = "";
@@ -77,7 +78,8 @@ $(document).ready(function(){
             }
         }
         else if(index == numwords -1){
-            if(!mistake && x.value.length == textarray[index].length){
+            mistake = strcompare(txt, textarray[index]);
+            if(!mistake && txt.length == textarray[index].length){
                 x.value = "";
                 $("#textbox").prop('disabled', true);
                 var right_now = new Date();
@@ -88,7 +90,7 @@ $(document).ready(function(){
             }
         }
         else{
-            mistake  = strcompare(x.value, textarray[index])
+            mistake  = strcompare(txt, textarray[index])
         }
 
         $("#demo").text(" ");
