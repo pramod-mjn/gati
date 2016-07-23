@@ -17,14 +17,13 @@ $(document).ready(function(){
     var mistake;
     var sometext; // = "this is pramod maharjan."
     var textarray;// = sometext.split(" ");
-    var str = "";
-    var writestatus = false;
     var start_time;
 
     $(window).load(function(){
         $("#demo").html("Wonder how fast can you type?<br>Find out now !!!<br>Click on start");
     });
-
+    
+    //Load the text from database
     $("#start").click(function(){
         $.ajax({
             type: "GET",
@@ -41,7 +40,6 @@ $(document).ready(function(){
                 setTimeout(function(){ $("#speed").text("2"); }, 3000);
                 setTimeout(function(){ $("#speed").text("1"); }, 4000);
                 setTimeout(function(){ 
-                    writestatus = true;
                     $("#textbox").prop('disabled', false);
                     $("#textbox").focus();
                     $("#speed").text("Go!");
@@ -53,16 +51,14 @@ $(document).ready(function(){
         });
 
     });
+    //Check the text input 
     $("#textbox").on('input', function(){
         var numwords = textarray.length;
         var x = document.getElementById("textbox");
         var txt = $(this).val()
         var z = txt.substr(-1,1);
         var key = z.charCodeAt(0);
-        if(writestatus == false){
-            x.value ="";
-        }
-        else if(key == 32){
+        if(key == 32){
             var temp = txt.slice(0,-1);
             mistake = strcompare(temp, textarray[index]);
             if(!mistake && temp.length == textarray[index].length){
@@ -90,9 +86,9 @@ $(document).ready(function(){
             }
         }
         else{
-            mistake  = strcompare(txt, textarray[index])
+            mistake  = strcompare(txt, textarray[index]);
         }
-
+        //bold the current word
         $("#demo").text(" ");
         for(i=0;i< numwords;i++){
             if(i == index){
@@ -102,6 +98,8 @@ $(document).ready(function(){
             }
 
         }
+
+        //display red color in mistyping
         if(mistake == true){
             $("#textbox").attr("style","color:#ff0000");
         }
