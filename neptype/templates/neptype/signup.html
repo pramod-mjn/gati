@@ -1,65 +1,74 @@
-{% extends 'neptype/index.html' %}
+{% extends 'neptype/home_base.html' %}
 {% load widget_tweaks %}
 
 {% block signinup %}
-<div class="well">
-<form class="form-horizontal" role="form" '''action="/neptype/verify/"''' method="post">
-    {% csrf_token %}
-    <div class="form-group">
-        <label class="col-sm-4 control-label">First Name</label>
-        <div class="col-sm-8">
-            {% render_field form.firstname class="form-control" id="focusedInput" %} 
-            {{ form.firstname.errors }}
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4 control-label">Last Name</label>
-        <div class="col-sm-8">
-            {% render_field form.lastname class="form-control" id="focusedInput" %} 
-            {{ form.lastname.errors }}
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-4 control-label">Date of Birth</label>
-        <div class="col-sm-8">
-            {% render_field form.dob class="form-control" id="focusedInput" %} 
-            {{ form.dob.errors }}
-        </div>
-    </div>
-<div class="form-group">
-        <label class="col-sm-4 control-label">Email</label>
-        <div class="col-sm-8">
-            {% render_field form.email class="form-control" id="focusedInput" %} 
-            {{ form.email.errors }}
-        </div>
-    </div>
-<div class="form-group">
-        <label class="col-sm-4 control-label">Username</label>
-        <div class="col-sm-8">
-            {% render_field form.username class="form-control" id="focusedInput" %} 
-            {{ form.username.errors }}
-        </div>
-    </div>
-<div class="form-group">
-        <label class="col-sm-4 control-label">Password</label>
-        <div class="col-sm-8">
-            {% render_field form.password class="form-control" id="focusedInput" %} 
-            {{ form.password.errors }}
-        </div>
-    </div>
-<div class="form-group">
-        <label class="col-sm-4 control-label">Confirm Password</label>
-        <div class="col-sm-8">
-            {% render_field form.password2 class="form-control" id="focusedInput" %} 
-            {{ form.password2.errors }}
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-4 col-sm-8">
-    <button type="submit" class="btn btn-default">Register</button>
-</div>
-</div>
-    </form>
-</div>
+ <!SignUp Block>
+            <div class="container-fluid" id="signupbox" >
+                <p class="heading" align="center"><strong>Sign Up</strong></p>
+                <form class="form-horizontal" role="form" '''action="/neptype/verify/"''' method="post">
+                    {% csrf_token %}
+                        {{ form.errors  }}
+                    <div class="form-group">
+                        {% render_field form.firstname class="form-control input-lg" id="focusedInput" placeholder="Name" %} 
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.email class="form-control input-lg" id="focusedInput" placeholder="Email" %} 
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.username class="form-control input-lg" id="focusedInput" placeholder="Username" %} 
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.password class="form-control input-lg" id="focusedInput" placeholder="Password" %} 
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.password2 class="form-control input-lg" id="focusedInput" placeholder="Confirm Password" %} 
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
     {% endblock %}
+
+{% block beginnerblock %}
+{% for i in beginners %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block semiproblock %}
+{% for i in semipros %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block problock %}
+{% for i in pros %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+

@@ -10,5 +10,6 @@ urlpatterns = [
         url(r'^home/', views.home, name='home'),
         url(r'^logout/', views.signoff, name='signoff'),
         url(r'^race/', views.race, name='race'),
-        url(r'^ajax/load_text/$', ajax.load_text, name='load_text')
+        url(r'^ajax/load_text/$', ajax.load_text, name='load_text'),
+        url(r'^ajax/update_speed/$', ajax.update_speed, name='update_speed'),
         ]

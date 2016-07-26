@@ -3,6 +3,11 @@
     src: url('/staitc/fonts/Devnew.ttf');
     src: local('/static/fonts/Devnew.tff');
 }
+body{
+    font: 400 20px Lato, sans-serif;
+    color: #777;
+
+}
 .navbar {
     margin-bottom: 0;
     background-color: #29292c;
@@ -15,8 +20,8 @@
     background-color:#29292c;
 }
 .navbar li a, .navbar .navbar-brand { 
-        color: #d5d5d5;
-    }
+    color: #d5d5d5;
+}
 .white{
     color: #ffffff;
 }
@@ -24,7 +29,7 @@ h1.space{
     padding-top:50px;
 }
 h3.white{
-    color: #ffffff;
+    color: #777;
     padding-top:5px;
     padding-bottom:20px;
 }
@@ -76,18 +81,19 @@ h3{
     background-color:#29292c;
 }
 .well-height{
-    height:300px;
+    height:350px;
     background-color:#ffffff;
+    border:2px solid  #777
 }
 p.heading{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 img.fixing{
     height:100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -101,7 +107,7 @@ img.fixing{
     background-color:#29292c;
 }
 
-.glyphicon{
+.logo{
     font-size:100px;
     padding-top:100px;
 }
@@ -117,5 +123,21 @@ p.foot{
 #speed{
     font-size: 8em;
 }
+.well-sm{
+    border: None;
+    background-color: #29292c;
+}
 #textbox{
+font-size:35px;
+height: 100px;
+}
+.empty_space{
+    padding-top: 50px;
+}
+.btn-primary{
+    background-color:#29292c;
+}
+.btn-primary:hover{
+    background-color:#29292c;
+
 }

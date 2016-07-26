@@ -1,0 +1,100 @@
+{% extends 'neptype/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container-fluid fixed-height">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>My First Bootstrap Page</h1>
+            <p>This is some text.</p> 
+        </div>
+        <div class="col-sm-4">
+            {% block signinup %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid fixed-height2">
+    <h1 class="space white" align="center">Top Speeders</h2>
+    <h3 class="white" align="center"> Which category do you belong to?</h4>
+    <div class="row container-fluid">
+        <div class="col-sm-4">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h1>Beginner</h1>
+                </div>
+                <div class="panel-body">
+                    {% block beginnerblock %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h1>Semi-Pro</h1>
+                </div>
+                <div class="panel-body">
+                    {% block semiproblock %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default" align="center">
+                <div class="panel-heading">
+                    <h1>Pro</h1>
+                </div>
+                <div class="panel-body">
+                    {% block problock %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid fixed-height" align="center">
+    <h1 class="space">Features</h1>
+    <h3>What you can do here </h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo"></span>
+            <h3>GLOBAL</h4>
+            <h4>Race in eglish typing and find your speed.</h4>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-home logo"></span>
+            <h3>LOCAL</h4>
+            <h4>Race in nepali typing and find your speed.</h4>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-tags logo"></span>
+            <h3>CLASS</h4>
+            <h4>Find out the category you belong to.</h4>
+        </div>
+    </div>
+</div>
+
+<script language="JavaScript">
+function showsignup(){
+    $("#signinbox").slideup();
+    $("#signupbox").slideDown(1000);
+}
+$(document).ready(function(){;
+        var error = "{{ signup_error }}";
+        if(error == 1){
+        $("signinbox").attr("style","display:none");
+        $("singupbox").attr("style","displau:block");
+        }
+        $("#signin").click(function(){
+            $("#signupbox").hide();
+            $("#signinbox").slideDown(1000);
+            });
+        $("#signup").click(function(){
+            $("#signinbox").hide();
+            $("#signupbox").slideDown(1000);
+            });
+        });
+</script>
+{% endblock %}
