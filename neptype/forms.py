@@ -18,8 +18,11 @@ class loginform(forms.Form):
 
 class UserForm(forms.Form):
     firstname = forms.CharField(label='Name', max_length=30)
+<<<<<<< HEAD
     lastname = forms.CharField(label='Last Name', max_length=30)
     dob = forms.DateField(label='Date of Birth')
+=======
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
     email = forms.EmailField(label='Email')
     username = forms.CharField(label='Username', max_length=30)
     password = forms.CharField(label='Password', max_length=30,
@@ -35,7 +38,10 @@ class UserForm(forms.Form):
     def save(self, data):
         user = User()
         user.first_name = data['firstname']
+<<<<<<< HEAD
         user.last_name = data['lastname']
+=======
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
         user.email = data['email']
         user.username = data['username']
         user.set_password(data['password'])
@@ -43,7 +49,10 @@ class UserForm(forms.Form):
 
         useradd = Userextend()
         useradd.user_id = user.id
+<<<<<<< HEAD
         useradd.dob = data['dob']
+=======
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
         useradd.vercode = self.verCode()
         useradd.save()
 

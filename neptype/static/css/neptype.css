@@ -3,6 +3,14 @@
     src: url('/staitc/fonts/Devnew.ttf');
     src: local('/static/fonts/Devnew.tff');
 }
+<<<<<<< HEAD
+=======
+body{
+    font: 400 20px Lato, sans-serif;
+    color: #777;
+
+}
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
 .navbar {
     margin-bottom: 0;
     background-color: #29292c;
@@ -15,8 +23,13 @@
     background-color:#29292c;
 }
 .navbar li a, .navbar .navbar-brand { 
+<<<<<<< HEAD
         color: #d5d5d5;
     }
+=======
+    color: #d5d5d5;
+}
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
 .white{
     color: #ffffff;
 }
@@ -24,7 +37,11 @@ h1.space{
     padding-top:50px;
 }
 h3.white{
+<<<<<<< HEAD
     color: #ffffff;
+=======
+    color: #777;
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
     padding-top:5px;
     padding-bottom:20px;
 }
@@ -76,18 +93,31 @@ h3{
     background-color:#29292c;
 }
 .well-height{
+<<<<<<< HEAD
     height:300px;
     background-color:#ffffff;
 }
 p.heading{
     font-size: 2em;
+=======
+    height:350px;
+    background-color:#ffffff;
+    border:2px solid  #777
+}
+p.heading{
+    font-size: 1.5em;
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
 }
 img.fixing{
     height:100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -101,7 +131,11 @@ img.fixing{
     background-color:#29292c;
 }
 
+<<<<<<< HEAD
 .glyphicon{
+=======
+.logo{
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
     font-size:100px;
     padding-top:100px;
 }
@@ -117,5 +151,25 @@ p.foot{
 #speed{
     font-size: 8em;
 }
+<<<<<<< HEAD
 #textbox{
+=======
+.well-sm{
+    border: None;
+    background-color: #29292c;
+}
+#textbox{
+font-size:35px;
+height: 100px;
+}
+.empty_space{
+    padding-top: 50px;
+}
+.btn-primary{
+    background-color:#29292c;
+}
+.btn-primary:hover{
+    background-color:#29292c;
+
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
 }

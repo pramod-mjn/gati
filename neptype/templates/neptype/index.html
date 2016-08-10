@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'neptype/base.html' %}
 {% load widget_tweaks %}
 
@@ -153,3 +154,86 @@ $(document).ready(function(){
         });
 </script>
 {% endblock %}
+=======
+{% extends 'neptype/home_base.html' %}
+
+{% block signinup %}
+<div class="container-fluid">
+    <p class="heading" align="center"><Strong>WELCOME  </strong></p>
+    <img src="/static/login_image.png" class="fixing" alt="login">
+    <div class="row empty_space">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9"><p><span class="glyphicon glyphicon-edit"></span> {{ c_user.user.first_name }}</p>
+            <p><span class="glyphicon glyphicon-user"></span> {{ c_user.user.username }}</p>
+            <p><span class="glyphicon glyphicon-pencil"></span> Your Max. Speed - {{ c_user.eng_speed }}</p>
+            <p><span class="glyphicon glyphicon-tags"></span>
+            {% if c_user.eng_speed > 100 %}
+            Pro
+            {% elif c_user.eng_speed > 50 %}
+            Semi-Pro
+            {% else %}
+            Beginner
+            {% endif %}</p>
+        </div>
+    </div>
+    <div class="empty_space"align="center">
+        {% if c_user.verified == 0 %} 
+        <p>Verify your account first </p>
+        <form class="form-horizontal" role="form" action="/neptype/verify/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control input-lg" id="focusedInput" name="ver_code" 
+                placeholder="Verification Code Here!" type="text" style="width:250px"/>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Verify</button>
+        </form>
+        {% else %}
+        <a href="/neptype/race/" class="btn btn-primary btn-lg" style:"background-color:#29292c">
+            Race
+        </a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block beginnerblock %}
+{% for i in beginners %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block semiproblock %}
+{% for i in semipros %}
+<div class="row" align="center">
+    <div class= "col-sm-3">
+        <strong> {{ i.eng_speed }} W/m</strong>
+    </div>
+    <div class="col-sm-9">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block problock %}
+{% for i in pros %}
+<div class="row" align="center">
+    <div class= "col-sm-3">
+        <strong> {{ i.eng_speed }} W/m</strong>
+    </div>
+    <div class="col-sm-9">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b

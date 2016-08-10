@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'neptype/index.html' %}
 
 {% block signinup %}
@@ -26,5 +27,72 @@
     <a href="/neptype/signup/"> Create an account </a>
 </div>
 
+=======
+{% extends 'neptype/home_base.html' %}
+
+{% block signinup %}
+<! SignIn Block>
+<div id="signinbox" class="container-fluid">
+    <p class="heading" align="center"><Strong> Sign In </strong></p>
+    <img src="/static/login_image.png" class="fixing" alt="login">
+    <div class="empty_space"></div>
+    <form class="form-horizontal" role="form" action="/neptype/home/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control input-lg" id="focusedInput" name="username" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control input-lg" id="focusedInput" name="password" placeholder="Password" type="password"/>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <!input type="submit" value="Login" />
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block beginnerblock %}
+{% for i in beginners %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block semiproblock %}
+{% for i in semipros %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block problock %}
+{% for i in pros %}
+<div class="row" align="center">
+    <div class= "col-sm-4">
+        <p><strong> {{ i.eng_speed }} W/m</strong></p>
+    </div>
+    <div class="col-sm-8">
+        {{i.user.first_name }}
+    </div>
+</div>
+{% endfor %}
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
 {% endblock %}
 

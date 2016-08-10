@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="container-fluid fixed-height">
+<<<<<<< HEAD
     <h1 class="space">English Race Mode >>
         <button id="start" class="btn btn-default btn-lg">Start</button>
         </h1>
@@ -9,13 +10,42 @@
         <div class="col-sm-8 container ">
             <div class="well well-height">
                 <p id="demo"></p>
+=======
+     <div class ="row">
+        <div class="col-sm-8">
+
+    <h1 class="space">English Race Mode >>
+        <button id="start" class="btn btn-default btn-lg">Start</button>
+        </h1>
+    </div>
+    <div class="col-sm-4" align="right">
+        <div class="empty_space"></div><div class="empty_space"></div>
+
+        {% if request.user.is_authenticated %}
+        <p id="max_speed">Your max. speed : {{ max_speed }} Wpm</p>
+        {% else %}
+        Login to save your speed!
+        {% endif %}
+    </div>
+</div>
+
+    <div class ="row" align="center">
+        <div class="col-sm-8 container ">
+            <div class="well well-height">
+                <p id="demo">Wonder how fast can you type?<br>Find out now !!!<br>Click on start</p>
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
             </div>
             <input class="form-control input-lg" id="textbox" placeholder="Type Here!!" disabled="disbaled">
         </div>
         <div class="col-sm-4">
             <div class="well well-height">
                 <p id="speed"></p>
+<<<<<<< HEAD
                 <p id="result"></p>
+=======
+                <strong><p id="result"></p></strong>
+                <strong><p id="record"></p></strong>
+>>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
             </div>
 
         </div>
