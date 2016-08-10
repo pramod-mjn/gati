@@ -10,10 +10,6 @@ urlpatterns = [
         url(r'^home/', views.home, name='home'),
         url(r'^logout/', views.signoff, name='signoff'),
         url(r'^race/', views.race, name='race'),
-<<<<<<< HEAD
-        url(r'^ajax/load_text/$', ajax.load_text, name='load_text')
-=======
         url(r'^ajax/load_text/$', ajax.load_text, name='load_text'),
         url(r'^ajax/update_speed/$', ajax.update_speed, name='update_speed'),
->>>>>>> 37c339a605e48c23a3f69e3a9b297d9507e67a2b
         ]
